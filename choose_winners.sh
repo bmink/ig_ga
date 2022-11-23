@@ -1,14 +1,14 @@
 #!/bin/bash
 
 COMMENTERS_FILEN=commenters
-GIVEAWAYS_FILEN=giveaways
+PRIZES_FILEN=prizes
 
-if [[ ! -s "$GIVEAWAYS_FILEN" ]]; then
-	echo "$GIVEAWAYS_FILEN must be present and nonzero"
+if [[ ! -s "$PRIZES_FILEN" ]]; then
+	echo "$PRIZES_FILEN must be present and nonzero"
 	exit -1
 fi
 
-GIVEAWAY_CNT=`cat "$GIVEAWAYS_FILEN" | wc -l`
+PRIZE_CNT=`cat "$PRIZES_FILEN" | wc -l`
 
 if [[ ! -s "$COMMENTERS_FILEN" ]]; then
 	echo "$COMMENTERS_FILEN must be present and nonzero"
@@ -16,9 +16,9 @@ if [[ ! -s "$COMMENTERS_FILEN" ]]; then
 fi
 
 echo "========================================="
-echo "Choosing $GIVEAWAY_CNT winners!"
+echo "Choosing $PRIZE_CNT winners!"
 echo "-----------------------------------------"
 
-shuf -n "$GIVEAWAY_CNT" "$COMMENTERS_FILEN" | paste "$GIVEAWAYS_FILEN" -
+shuf -n "$PRIZE_CNT" "$COMMENTERS_FILEN" | paste "$PRIZES_FILEN" -
 
 echo "========================================="
