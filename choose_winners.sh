@@ -15,6 +15,14 @@ if [[ ! -s "$COMMENTERS_FILEN" ]]; then
 	exit -1
 fi
 
+COUNTD_SEC=5
+
+for i in $(seq "$COUNTD_SEC" -1 1); do
+	echo "$i"
+	sleep 1
+done
+
+
 echo "========================================="
 echo "Choosing $PRIZE_CNT winners!"
 echo "-----------------------------------------"
