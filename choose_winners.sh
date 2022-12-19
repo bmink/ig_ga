@@ -27,6 +27,7 @@ for i in $(seq "$COUNTD_SEC" -1 1); do
 	sleep 1
 done
 
+echo
 
 echo "========================================="
 echo "Choosing $PRIZE_CNT winners!"
